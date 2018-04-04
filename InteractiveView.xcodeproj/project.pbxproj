@@ -12,6 +12,13 @@
 		F0E1692B2073B7770028BEEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E169292073B7770028BEEC /* Main.storyboard */; };
 		F0E1692D2073B7770028BEEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E1692C2073B7770028BEEC /* Assets.xcassets */; };
 		F0E169302073B7770028BEEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E1692E2073B7770028BEEC /* LaunchScreen.storyboard */; };
+		F0E169392073B7D20028BEEC /* Interactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E169382073B7D20028BEEC /* Interactive.swift */; };
+		F0E1693C2073B8D30028BEEC /* FlexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1693B2073B8D30028BEEC /* FlexView.swift */; };
+		F0E1693E2073B8EA0028BEEC /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1693D2073B8EA0028BEEC /* extension.swift */; };
+		F0E169402073BD740028BEEC /* InteractiveDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1693F2073BD740028BEEC /* InteractiveDelegate.swift */; };
+		F0E169452073EA5A0028BEEC /* TagInteractive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E169442073EA5A0028BEEC /* TagInteractive.swift */; };
+		F0E169472073EA6A0028BEEC /* ImageInteractive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E169462073EA6A0028BEEC /* ImageInteractive.swift */; };
+		F0E169492073EA800028BEEC /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E169482073EA800028BEEC /* MoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		F0E1692C2073B7770028BEEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E1692F2073B7770028BEEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0E169312073B7770028BEEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0E169382073B7D20028BEEC /* Interactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactive.swift; sourceTree = "<group>"; };
+		F0E1693B2073B8D30028BEEC /* FlexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexView.swift; sourceTree = "<group>"; };
+		F0E1693D2073B8EA0028BEEC /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		F0E1693F2073BD740028BEEC /* InteractiveDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveDelegate.swift; sourceTree = "<group>"; };
+		F0E169442073EA5A0028BEEC /* TagInteractive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagInteractive.swift; sourceTree = "<group>"; };
+		F0E169462073EA6A0028BEEC /* ImageInteractive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractive.swift; sourceTree = "<group>"; };
+		F0E169482073EA800028BEEC /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,45 @@
 		F0E169242073B7770028BEEC /* InteractiveView */ = {
 			isa = PBXGroup;
 			children = (
+				F0E1693A2073B8C80028BEEC /* Lib */,
+				F0E169372073B7BF0028BEEC /* Source */,
+				F0E169412073E9FB0028BEEC /* Support */,
 				F0E169252073B7770028BEEC /* AppDelegate.swift */,
 				F0E169272073B7770028BEEC /* ViewController.swift */,
+				F0E169482073EA800028BEEC /* MoreViewController.swift */,
 				F0E169292073B7770028BEEC /* Main.storyboard */,
 				F0E1692C2073B7770028BEEC /* Assets.xcassets */,
 				F0E1692E2073B7770028BEEC /* LaunchScreen.storyboard */,
 				F0E169312073B7770028BEEC /* Info.plist */,
 			);
 			path = InteractiveView;
+			sourceTree = "<group>";
+		};
+		F0E169372073B7BF0028BEEC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F0E169382073B7D20028BEEC /* Interactive.swift */,
+				F0E1693F2073BD740028BEEC /* InteractiveDelegate.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F0E1693A2073B8C80028BEEC /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1693B2073B8D30028BEEC /* FlexView.swift */,
+				F0E1693D2073B8EA0028BEEC /* extension.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		F0E169412073E9FB0028BEEC /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F0E169442073EA5A0028BEEC /* TagInteractive.swift */,
+				F0E169462073EA6A0028BEEC /* ImageInteractive.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +180,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E169492073EA800028BEEC /* MoreViewController.swift in Sources */,
+				F0E169392073B7D20028BEEC /* Interactive.swift in Sources */,
 				F0E169282073B7770028BEEC /* ViewController.swift in Sources */,
+				F0E169472073EA6A0028BEEC /* ImageInteractive.swift in Sources */,
 				F0E169262073B7770028BEEC /* AppDelegate.swift in Sources */,
+				F0E1693E2073B8EA0028BEEC /* extension.swift in Sources */,
+				F0E1693C2073B8D30028BEEC /* FlexView.swift in Sources */,
+				F0E169452073EA5A0028BEEC /* TagInteractive.swift in Sources */,
+				F0E169402073BD740028BEEC /* InteractiveDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gavinining.InteractiveView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gavinining.InteractiveView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

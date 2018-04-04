@@ -1,32 +1,28 @@
 //
-//  ViewController.swift
+//  TagInteractive.swift
 //  InteractiveView
 //
-//  Created by gavinning on 2018/4/3.
+//  Created by gavinning on 2018/4/4.
 //  Copyright © 2018年 gavinning. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: Interactive {
+class TagInteractive: Interactive {
     
     var marginSide: CGFloat = 10
     var margin: CGFloat {
         return marginSide*2
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        inter.b.frame.origin.y = inter.a.frame.origin.y + inter.a.frame.height + 10
-        self.view.addSubview(inter.a)
-        self.view.addSubview(inter.b)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     override func createParent() -> FlexView {
         let bar = FlexView(frame: CGRect(x: 0, y: 30, width: self.view.frame.width, height: 40))
         bar.axis = .horizontal
@@ -38,10 +34,10 @@ class ViewController: Interactive {
         bar.contentSizeToFit()
         return bar
     }
-
+    
     override func createItems() -> [UIView] {
         let tags = ["风光", "色彩", "城市", "时尚", "旅行", "上海", "雕刻时光", "手绘", "插画"] // , "CG", "原画", "35mm", "尼康"
-
+        
         return tags.map { (tag) in
             let btn = UIButton()
             btn.setTitle(tag, for: .normal)
@@ -57,6 +53,6 @@ class ViewController: Interactive {
             btn.addTarget(self, action: #selector(itemClicked(_:)), for: .touchUpInside)
             return btn
         }
-    }    
+    }
 }
 

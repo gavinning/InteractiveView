@@ -1,11 +1,23 @@
-//
-//  ViewController.swift
-//  InteractiveView
-//
-//  Created by gavinning on 2018/4/3.
-//  Copyright © 2018年 gavinning. All rights reserved.
-//
+Interactive
+---
+用于两个视图之间做子视图的互动关联
+  
+![](interactive.gif)  
 
+
+### Usage
+``Interactive``需要依赖[FlexView](https://github.com/gavinning/FlexView)  
+其诸多特性需要``FlexView``支持，例如子视图进出场动画，自动滚动区域等等
+```swift
+// 需要实现两个代理方法
+// @1 创建父视图的方法
+func createParent() -> FlexView
+// @2 创建子视图队列的方法
+func createItems() -> [UIView]
+```
+
+#### 单例模式
+```swift
 import UIKit
 
 class ViewController: Interactive {
@@ -18,6 +30,9 @@ class ViewController: Interactive {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 返回两个父视图
+        // inter.a & inter.b
+        // 可以根据需要添加到ViewController中
         inter.b.frame.origin.y = inter.a.frame.origin.y + inter.a.frame.height + 10
         self.view.addSubview(inter.a)
         self.view.addSubview(inter.b)
@@ -27,6 +42,7 @@ class ViewController: Interactive {
         super.didReceiveMemoryWarning()
     }
 
+    // 创建父视图的方法
     override func createParent() -> FlexView {
         let bar = FlexView(frame: CGRect(x: 0, y: 30, width: self.view.frame.width, height: 40))
         bar.axis = .horizontal
@@ -39,6 +55,7 @@ class ViewController: Interactive {
         return bar
     }
 
+    // 创建子视图队列的方法
     override func createItems() -> [UIView] {
         let tags = ["风光", "色彩", "城市", "时尚", "旅行", "上海", "雕刻时光", "手绘", "插画"] // , "CG", "原画", "35mm", "尼康"
 
@@ -59,4 +76,35 @@ class ViewController: Interactive {
         }
     }    
 }
+```
 
+#### 多实例模式
+```swift
+import UIKit
+
+class MoreViewController: UIViewController {
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // TagInteractive是Interactive的子类
+        // 子类具体实现可以参考单例模式
+        let tag = TagInteractive()
+        tag.viewDidLoad()
+        tag.inter.b.frame.origin.y = tag.inter.a.frame.origin.y + tag.inter.a.frame.height + 10
+        self.view.addSubview(tag.inter.a)
+        self.view.addSubview(tag.inter.b)
+        
+        // ImageInteractive是Interactive的子类
+        let image = ImageInteractive()
+        image.viewDidLoad()
+        image.inter.b.frame.origin.y = image.inter.a.frame.origin.y + image.inter.a.frame.height + 10
+        self.view.addSubview(image.inter.a)
+        self.view.addSubview(image.inter.b)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
+```
